@@ -121,7 +121,7 @@
     "AWSRegionArch2AMI": {
       "us-east-1": {
         "32": "ami-31814f58",
-        "64": "ami-1b814f72",
+        "64": "ami-8dd105e6",
         "64HVM": "ami-0da96764"
       },
       "us-west-2": {
@@ -357,9 +357,7 @@
                 "function error_exit\n",
                 "{\n",
                 "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
-                {
-                  "Ref": "WaitHandle"
-                },
+                
                 "'\n",
                 "  exit 1\n",
                 "}\n",
@@ -389,9 +387,7 @@
                 "chown -R apache:apache /var/www/html/wordpress\n",
                 "# All is well so signal success\n",
                 "/opt/aws/bin/cfn-signal -e 0 -r \"WordPress setup complete\" '",
-                {
-                  "Ref": "WaitHandle"
-                },
+                
                 "'\n"
               ]
             ]
@@ -399,20 +395,7 @@
         }
       }
     },
-    "WaitHandle": {
-      "Type": "AWS::CloudFormation::WaitConditionHandle"
-    },
-    "WaitCondition": {
-      "Type": "AWS::CloudFormation::WaitCondition",
-      "DependsOn": "WebServer",
-      "Properties": {
-        "Handle": {
-          "Ref": "WaitHandle"
-        },
-        "Timeout": "300"
-      }
-    },
-    "WebServerSecurityGroup": {
+       "WebServerSecurityGroup": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "GroupDescription": "Enable HTTP access via port 80 and SSH access",
