@@ -181,7 +181,7 @@
    "WebServerGroup" : {
   "Type" : "AWS::AutoScaling::AutoScalingGroup",
   "Properties" : {
-    "AvailabilityZones" : { "Fn::GetAZs" : ""},
+    "AvailabilityZones" : { "Fn::GetAZs" : "us-east-1b"},
     "LaunchConfigurationName" : { "Ref" : "LaunchConfig" },
     "MinSize" : "0",
     "MaxSize" : "4",
@@ -424,7 +424,7 @@
 "WorkerGroup" : {
   "Type" : "AWS::AutoScaling::AutoScalingGroup",
   "Properties" : {
-    "AvailabilityZones" : { "Fn::GetAZs" : ""},
+    "AvailabilityZones" : { "Fn::GetAZs" : "us-east-1b"},
     "LaunchConfigurationName" : { "Ref" : "LaunchConfig" },
     "MinSize" : { "Ref" : "MinInstances" },
     "MaxSize" : { "Ref" : "MaxInstances" },
