@@ -4,7 +4,7 @@
   "Parameters": {
     "KeyName": {
     "Default":"dcloud",
-      "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instances",
+      "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instances1",
       "Type": "String"
     },
     "InstanceType": {
